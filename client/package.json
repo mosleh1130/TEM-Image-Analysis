@@ -10,7 +10,6 @@
   "dependencies": {
     "axios": ">=0.18.1",
     "core-js": "^3.4.4",
-    "materialize-css": "^1.0.0-rc.2",
     "nouislider": "^14.1.1",
     "vue": "^2.6.10",
     "vue-router": "^3.1.3"

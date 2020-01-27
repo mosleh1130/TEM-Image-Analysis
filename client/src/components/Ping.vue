@@ -76,7 +76,7 @@
         </div>
       </div>
       <div class="row">
-        <button class="btn waves-effect waves-light" type="submit" v-on:click="sendImage">Submit
+        <button class="btn waves-effect waves-light" type="submit" v-on:click="sendImage">Process
           <i class="material-icons right">send</i>
         </button>
       </div>

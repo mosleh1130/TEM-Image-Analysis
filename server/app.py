@@ -22,7 +22,7 @@ CORS(app, resources={r'/*': {'origins': '*'}})
 
 # sanity check route
 @app.route('/ping', methods=['POST'])
-def ping_pong():
+def process_image():
     data = {}
     data["area"] = []
     data["input"] = []
@@ -87,13 +87,13 @@ def ping_pong():
         print("Area #{}:".format(i + 1))
         area = cv2.contourArea(c)
         print(area)
-        area_nm = area * 0.21 / 5
+        area_nm = area * 0.21
 
         (x,y),radius = cv2.minEnclosingCircle(c)
         center = (int(x),int(y))
         radius = int(radius)
         cv2.circle(image,center,radius,(0,255,0),1)
-        data["area"].append({"location": (int(x),int(y)), "size": round(area_nm, 3)})
+        data["area"].append({"location": (int(5*x),int(5*y)), "size": round(area_nm, 2)})
 
         cv2.putText(image, "#{}".format(i + 1),
             (int(x), int(y)),
